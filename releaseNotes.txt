@@ -6,7 +6,7 @@ Version 0.5.12:
 		- 
 	
 	fixes:
-		- 
+		- message port to background script get sometimes disconnected
 	
 	known issues:
 		- if a data URL is blocked the page action button does not appear
