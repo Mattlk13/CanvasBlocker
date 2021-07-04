@@ -5,58 +5,25 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<link href="testIcon.svg" type="image/png" rel="icon">
 	<link href="testIcon.svg" type="image/png" rel="shortcut icon">
-	<style>
-		#iframe {
-			position: absolute;
-			top: -2000%;
-		}
-		.template {
-			display: none;
-		}
-		.test {
-			display: inline-block;
-			margin: 1em;
-		}
-		.test .data table {
-			border-collapse: collapse;
-		}
-		.test .data th {
-			padding: 0.4em;
-		}
-		.test .data td{
-			border: 1px solid #c7c7c7;
-			padding: 0.4em;
-		}
-		.test .data td.value {
-			text-align: right;
-		}
-		.small {
-			font-size: 0.8em;
-			color: gray;
-		}
-		.rectHash {
-			font-size: 4px;
-		}
-		.rectHash:hover {
-			font-size: 100%;
-		}
-	</style>
+	<link href="domRectTest.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <h1>DOMRect test</h1>
 <h2>Expected result</h2>
 <ul>
-	<li>all the hashes and numbers should be equal for each test</li>
+	<li>all the hashes and numbers should be equal for the getClientRects and getBoundingClientRect tests</li>
 	<li>if "refresh" is clicked the hash must not change</li>
 	<li>upon page reload the hashes change (depending on CanvasBlocker settings - e.g. not in the stealth preset)</li>
 </ul>
 <h2>Tests</h2>
-<iframe id="iframe" src="domRectIFrame.html"></iframe>
+<iframe id="iframe" src="domRectIFrame.php"></iframe>
+<iframe id="svg" src="domRectSVG.svg"></iframe>
+<div id="noIframe"><?php include("domRectElements.part.html");?></div>
 <div id="tests">
 	<div class="test">
 		<h3 class="title"></h3>
 		Hash: <span class="hash"></span><br>
-		Data: <span class="data"></span><br>
+		<span class="content-hidable content-hidden">Data: <span class="toggle"><span class="anti-content">&plus;</span><span class="content">&minus;</span></span><span class="data content"></span></span><br>
 		<button class="refresh">refresh</button>
 		<button class="performance">measure performance</button>
 	</div>

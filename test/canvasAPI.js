@@ -2,8 +2,8 @@ const canvasAPI = {
 	draw: function draw(canvas){
 		"use strict";
 		
-		canvas.setAttribute("width", 220);
-		canvas.setAttribute("height", 30);
+		canvas.width = 220;
+		canvas.height = 30;
 		
 		const fingerprintText = "BrowserLeaks,com <canvas> 10";
 		
@@ -15,7 +15,7 @@ const canvasAPI = {
 		context.fillRect(125, 1, 62, 20);
 		context.fillStyle = "#069";
 		context.fillText(fingerprintText, 2, 15);
-		context.fillStyle = "rgba(102, 204, 0, 07)";
+		context.fillStyle = "rgba(102, 204, 0, 0.7)";
 		context.fillText(fingerprintText, 4, 17);
 		
 		return context;

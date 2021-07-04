@@ -18,6 +18,11 @@
 	
 	document.querySelector("head title").textContent = title.textContent;
 	
+	const description = document.createElement("div");
+	description.className = "description";
+	description.textContent = extension.getTranslation("whitelist_inspection_description");
+	document.body.appendChild(description);
+	
 		
 	const whitelistSettings = [
 		{
@@ -73,11 +78,15 @@
 	settings.onloaded(function(){
 		const sets = settingContainers.urlContainer.get();
 		
+		const selectLabel = document.createElement("label");
+		selectLabel.textContent = "URL ";
+		document.body.appendChild(selectLabel);
+		
 		const setSelect = document.createElement("select");
 		sets.forEach(function(set){
 			setSelect.appendChild(new Option(set.url));
 		});
-		document.body.appendChild(setSelect);
+		selectLabel.appendChild(setSelect);
 		
 		if (searchParameters.has("urls")){
 			const urls = JSON.parse(searchParameters.get("urls")).map(function(url){
@@ -102,6 +111,7 @@
 		
 		const table = document.createElement("table");
 		whitelistSettings.forEach(function(setting){
+			const settingDefinition = settings.getDefinition(setting.name);
 			const row = document.createElement("tr");
 			setting.row = row;
 			const name = document.createElement("td");
@@ -110,11 +120,13 @@
 			setting.input = document.createElement("input");
 			setting.input.type = "checkbox";
 			setting.input.addEventListener("change", function(){
-				settings.set(
-					setting.name,
-					this.checked? setting.protectedValue: setting.whitelistValue,
-					setSelect.value
-				);
+				const value = this.checked? setting.protectedValue: setting.whitelistValue;
+				if (settingDefinition.get() === value){
+					settingDefinition.reset(setSelect.value);
+				}
+				else {
+					settingDefinition.set(value, setSelect.value);
+				}
 			});
 			const input = document.createElement("td");
 			input.appendChild(setting.input);

@@ -23,6 +23,14 @@
 		"message": "\n  · {api}",
 		"description": ""
 	},
+	"browserAction_status_on": {
+		"message": "CanvasBlocker an",
+		"description": ""
+	},
+	"browserAction_status_off": {
+		"message": "CanvasBlocker aus",
+		"description": ""
+	},
 	"more": {
 		"message": "mehr",
 		"description": ""
@@ -147,6 +155,10 @@
 		"message": "DOMRect-API",
 		"description": ""
 	},
+	"section_TextMetrics-api": {
+		"message": "TextMetrics-API",
+		"description": ""
+	},
 	"section_Navigator-api": {
 		"message": "Navigator-API",
 		"description": ""
@@ -169,6 +181,26 @@
 	},
 	"displayDescriptions_description": {
 		"message": "Zeigt die Beschreibungen der Einstellungen an.",
+		"description": ""
+	},
+	"disruptSessionOnUpdate_title": {
+		"message": "Aktualisierung unterbricht Sitzung",
+		"description": ""
+	},
+	"disruptSessionOnUpdate_description": {
+		"message": "Die Erweiterung wird sofort aktualisiert, sobald ein Update verfügbar ist, wenn aktiviert. Dies könnte einige Tabs unbrauchbar machen, die derzeit geöffnet sind.",
+		"description": ""
+	},
+	"reloadExtension_title": {
+		"message": "Erweiterung neu laden",
+		"description": ""
+	},
+	"reloadExtension_description": {
+		"message": "Führt eine ausstehende Aktualisierung aus.",
+		"description": ""
+	},
+	"reloadExtension_label": {
+		"message": "Neu laden",
 		"description": ""
 	},
 	"hideSetting": {
@@ -265,6 +297,18 @@
 	},
 	"askForDOMRectReadoutPermission": {
 		"message": "Wollen Sie das Auslesen über die DOMRect-API erlauben?",
+		"description": ""
+	},
+	"askForTextMetricsPermission": {
+		"message": "Wollen Sie die TextMetrics-API erlauben?",
+		"description": ""
+	},
+	"askForTextMetricsInputPermission": {
+		"message": "Wollen Sie das Schreiben über die TextMetrics-API erlauben?",
+		"description": ""
+	},
+	"askForTextMetricsReadoutPermission": {
+		"message": "Wollen Sie das Auslesen über die TextMetrics-API erlauben?",
 		"description": ""
 	},
 	"askForNavigatorPermission": {
@@ -671,6 +715,10 @@
 		"message": "DOMRect-Auslese vorgetäuscht auf {url}",
 		"description": ""
 	},
+	"fakedTextMetricsReadout": {
+		"message": "TextMetrics-Auslese vorgetäuscht auf {url}",
+		"description": ""
+	},
 	"fakedNavigatorReadout": {
 		"message": "Navigator-Auslese vorgetäuscht auf {url}",
 		"description": ""
@@ -761,6 +809,10 @@
 	},
 	"selectWhitelistScope": {
 		"message": "Was soll erlaubt werden?",
+		"description": ""
+	},
+	"selectWhitelistType": {
+		"message": "Wie soll erlaubt werden?",
 		"description": ""
 	},
 	"whitelistOnlyAPI": {
@@ -1107,6 +1159,18 @@
 		"message": "Ein Bruchteil eines Pixels kann durch CSS kontrolliert werden. Eigenschaften eines DOMRect, die multipliziert mit diesem Faktor eine ganze Zahl ergeben, dürfen nicht verändert werden um eine Detektion zu verhindern.",
 		"description": ""
 	},
+	"protectTextMetrics_title": {
+		"message": "TextMetrics-API beschützen",
+		"description": ""
+	},
+	"protectTextMetrics_description": {
+		"message": "Beschützt vor dem \"measureText()\" Fingerprint. Dieser kann verwendet werden um die DOMRect-Werte zu überprüfen.",
+		"description": ""
+	},
+	"protectTextMetrics_urlSpecific": {
+		"message": "Um bestimmte Seiten von diesem Schutz auszuschließen, klicken Sie auf den schwarzen Pfeil um das Menü zu öffnen, fügen Sie die gewünschte Domain oder URL mit einem Klick auf \"+\" hinzu und entfernen Sie das zugehörige Häkchen.",
+		"description": ""
+	},
 	"protectNavigator_title": {
 		"message": "Navigator-API beschützen",
 		"description": ""
@@ -1355,6 +1419,10 @@
 		"message": "Einstellungen",
 		"description": ""
 	},
+	"browserAction_faq": {
+		"message": "FAQ",
+		"description": ""
+	},
 	"browserAction_test": {
 		"message": "Testen",
 		"description": ""
@@ -1413,6 +1481,10 @@
 	},
 	"sanitation_error.disabledFeatures": {
 		"message": "Alle Funktionen der {api} sind deaktiviert, aber der Schutz ist eingeschaltet.",
+		"description": ""
+	},
+	"sanitation_error.disabledSomeFeatures": {
+		"message": "Einige Funktionen der {api} sind deaktiviert. Dies sollte nur zu Testzwecken passieren oder wenn Sie genau wissen, was diese Funktionen tun.",
 		"description": ""
 	},
 	"sanitation_resolution.disableMainFlag": {
@@ -1491,6 +1563,10 @@
 		"message": "CanvasBlocker Erlaubnisse ansehen",
 		"description": ""
 	},
+	"whitelist_inspection_description": {
+		"message": "Anzeige des API-Schutzes für eine bestimmte Webseite. Wenn man das Häkchen bei einer API entfernt, wird diese für die ausgewählte Webseite nicht mehr beschützt.",
+		"description": ""
+	},
 	"whitelist_all_apis": {
 		"message": "Alle APIs",
 		"description": ""
@@ -1544,11 +1620,11 @@
 		"description": ""
 	},
 	"preset_recaptcha_title": {
-		"message": "reCAPTCHA Ausnahme",
+		"message": "reCAPTCHA-Ausnahme",
 		"description": ""
 	},
 	"preset_recaptcha_description": {
-		"message": "Der window-API-Schutz macht reCAPTCHA unbenutzbar. Diese Voreinstellung erlaubt die Benutzung der window.name-API in eingebetteten Seiten. Dadurch funktioniert es wieder.",
+		"message": "Der Window-API-Schutz macht reCAPTCHA unbenutzbar. Diese Voreinstellung erlaubt die Benutzung der window.name-API in eingebetteten Seiten, wodurch es wieder funktioniert.",
 		"description": ""
 	}
 }

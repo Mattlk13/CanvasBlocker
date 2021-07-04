@@ -36,14 +36,12 @@ if (!userAgentIsConsistent){
 }
 const lines = {};
 
-iframeAPI.forEachMethod(function(windowToUse, name){
+function processNavigatorObject(navigator, keys, name){
 	"use strict";
-
-	const navigator = windowToUse.navigator;
-	Object.keys(navigator.__proto__).sort().forEach(function(property){
+	
+	keys.sort().forEach(function(property){
 		const value = navigator[property];
 		if ((typeof value) === "string"){
-			const isFirst = !lines[property];
 			if (!lines[property]){
 				lines[property] = {
 					values: [],
@@ -60,4 +58,81 @@ iframeAPI.forEachMethod(function(windowToUse, name){
 			}
 		}
 	});
+}
+
+iframeAPI.forEachMethod(function(windowToUse, name){
+	"use strict";
+
+	const navigator = windowToUse.navigator;
+	processNavigatorObject(navigator, Object.keys(navigator.__proto__), name);
+});
+
+function processWorkerNavigatorObject(data, name){
+	"use strict";
+	processNavigatorObject(data.values, Object.keys(data.values), name);
+	if (data.nestedValues){
+		processWorkerNavigatorObject(data.nestedValues, "nested " + name);
+	}
+}
+
+const worker = new Worker("navigatorTestWorker.js", {name: "Worker"});
+worker.addEventListener("message", function(event){
+	"use strict";
+	
+	processWorkerNavigatorObject(event.data, "Worker");
+	worker.terminate();
+});
+
+fetch("navigatorTestWorker.js").then(function(response){
+	"use strict";
+	
+	return response.text();
+}).then(function(code){
+	"use strict";
+	
+	const blob = new Blob([code], {type: "text/javascript"});
+	const blobWorker = new Worker(URL.createObjectURL(blob), {name: "BlobWorker"});
+	blobWorker.addEventListener("message", function(event){
+		processWorkerNavigatorObject(event.data, "BlobWorker");
+		blobWorker.terminate();
+	});
+	
+	return blobWorker;
+}).catch(function(error){
+	"use strict";
+	
+	console.error("Unable to create BlobWorker:", error);
+});
+
+const sharedWorker = new SharedWorker("navigatorTestWorker.js", {name: "SharedWorker"});
+sharedWorker.port.addEventListener("message", function(event){
+	"use strict";
+	
+	processWorkerNavigatorObject(event.data, "SharedWorker");
+	sharedWorker.port.close();
+});
+sharedWorker.port.start();
+
+navigator.serviceWorker.register("navigatorTestWorker.js").then(function(registration){
+	"use strict";
+	
+	const worker = (registration.active || registration.waiting || registration.installing);
+	navigator.serviceWorker.addEventListener("message", function(event){
+		processWorkerNavigatorObject(event.data, "ServiceWorker");
+		registration.unregister();
+	});
+	if (worker.state !== "activated"){
+		worker.addEventListener("statechange", function(){
+			if (worker.state === "activated"){
+				worker.postMessage("send");
+			}
+		});
+	}
+	else {
+		worker.postMessage("send");
+	}
+	return registration;
+}).catch(function(error){
+	"use strict";
+	console.error("Unable to register service worker:", error);
 });

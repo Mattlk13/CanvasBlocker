@@ -125,6 +125,82 @@
 				{
 					"version": "1.2Alpha20200128",
 					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.2Alpha20200128-an+fx.xpi"
+				},
+				{
+					"version": "1.2Alpha20200224",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.2Alpha20200224-an+fx.xpi"
+				},
+				{
+					"version": "1.2Alpha20200314",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.2Alpha20200314-an+fx.xpi"
+				},
+				{
+					"version": "1.3Alpha20200317",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.3Alpha20200317-an+fx.xpi"
+				},
+				{
+					"version": "1.3Alpha20200601",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.3Alpha20200601-an+fx.xpi"
+				},
+				{
+					"version": "1.4Alpha20200607",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.4Alpha20200607-an+fx.xpi"
+				},
+				{
+					"version": "1.4Alpha20201102",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.4Alpha20201102-an+fx.xpi"
+				},
+				{
+					"version": "1.5Alpha20201109",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.5Alpha20201109-an+fx.xpi"
+				},
+				{
+					"version": "1.5Alpha20210103",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.5Alpha20210103-an+fx.xpi"
+				},
+				{
+					"version": "1.5Alpha20210104",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.5Alpha20210104-an+fx.xpi"
+				},
+				{
+					"version": "1.5Alpha20210112",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.5Alpha20210112-an+fx.xpi"
+				},
+				{
+					"version": "1.6Alpha20210118",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.6Alpha20210118-an+fx.xpi"
+				},
+				{
+					"version": "1.6Alpha20210126",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.6Alpha20210126-an+fx.xpi"
+				},
+				{
+					"version": "1.6Alpha20210127",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.6Alpha20210127-an+fx.xpi"
+				},
+				{
+					"version": "1.6Alpha20210307",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.6Alpha20210307-an+fx.xpi"
+				},
+				{
+					"version": "1.6Alpha20210606",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.6Alpha20210606-an+fx.xpi"
+				},
+				{
+					"version": "1.6Alpha20210611",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.6Alpha20210611-an+fx.xpi"
+				},
+				{
+					"version": "1.6Alpha20210613",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.6Alpha20210613-an+fx.xpi"
+				},
+				{
+					"version": "1.7Alpha20210620",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.7Alpha20210620-an+fx.xpi"
+				},
+				{
+					"version": "1.7Alpha20210621",
+					"update_link": "https://canvasblocker.kkapsner.de/versions/canvasblocker_beta-1.7Alpha20210621-an+fx.xpi"
 				}
 			]
 		}

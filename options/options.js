@@ -20,6 +20,9 @@
 	const mobile = require("../lib/mobile");
 	
 	const callbacks = {
+		reloadExtension: function(){
+			browser.runtime.reload();
+		},
 		openNavigatorSettings: function(){
 			logging.verbose("open navigator settings");
 			window.open("navigator.html", "_blank");
@@ -33,7 +36,7 @@
 			logging.notice("empty storage");
 			settings.persistentRndStorage = "";
 			logging.notice("send message to main script");
-			extension.message.send({"canvasBlocker-clear-domain-rnd": true});
+			extension.message.send({"canvasBlocker-clear-domain-rnd": "force"});
 		},
 		clearPersistentRndForContainer: async function(){
 			const identities = await browser.contextualIdentities.query({});
@@ -96,6 +99,7 @@
 			const text = await new Promise(function(resolve, reject){
 				const input = document.createElement("input");
 				input.type = "file";
+				input.accept = "application/json";
 				input.addEventListener("change", function(){
 					if (this.files.length){
 						const reader = new FileReader();

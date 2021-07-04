@@ -24,6 +24,14 @@
 		"message": "\n  \u00B7 {api}",
 		"description": ""
 	},
+	"browserAction_status_on": {
+		"message": "CanvasBlocker on",
+		"description": ""
+	},
+	"browserAction_status_off": {
+		"message": "CanvasBlocker off",
+		"description": ""
+	},
 	
 	"more": {
 		"message": "more",
@@ -154,6 +162,10 @@
 		"message": "DOMRect API",
 		"description": ""
 	},
+	"section_TextMetrics-api": {
+		"message": "TextMetrics API",
+		"description": ""
+	},
 	"section_Navigator-api": {
 		"message": "Navigator API",
 		"description": ""
@@ -178,6 +190,28 @@
 	},
 	"displayDescriptions_description": {
 		"message": "Displays the descriptions of the settings.",
+		"description": ""
+	},
+	
+	"disruptSessionOnUpdate_title": {
+		"message": "Disrupt session on update",
+		"description": ""
+	},
+	"disruptSessionOnUpdate_description": {
+		"message": "If set to true the extension will update as soon as the update is available. This might break some tabs that are currently open.",
+		"description": ""
+	},
+	
+	"reloadExtension_title": {
+		"message": "Reload extension",
+		"description": ""
+	},
+	"reloadExtension_description": {
+		"message": "Perform a pending update.",
+		"description": ""
+	},
+	"reloadExtension_label": {
+		"message": "Reload",
 		"description": ""
 	},
 	
@@ -277,6 +311,18 @@
 	},
 	"askForDOMRectReadoutPermission": {
 		"message": "Do you want to allow DOMRect API readout?",
+		"description": ""
+	},
+	"askForTextMetricsPermission": {
+		"message": "Do you want to allow the TextMetrics API?",
+		"description": ""
+	},
+	"askForTextMetricsInputPermission": {
+		"message": "Do you want to allow TextMetrics API input?",
+		"description": ""
+	},
+	"askForTextMetricsReadoutPermission": {
+		"message": "Do you want to allow TextMetrics API readout?",
 		"description": ""
 	},
 	"askForNavigatorPermission": {
@@ -705,6 +751,10 @@
 		"message": "Faked DOMRect readout on {url}",
 		"description": ""
 	},
+	"fakedTextMetricsReadout": {
+		"message": "Faked TextMetrics readout on {url}",
+		"description": ""
+	},
 	"fakedNavigatorReadout": {
 		"message": "Faked navigator readout on {url}",
 		"description": ""
@@ -797,6 +847,10 @@
 	},
 	"selectWhitelistScope": {
 		"message": "What is the scope of the whitelisting?",
+		"description": ""
+	},
+	"selectWhitelistType": {
+		"message": "What is the type of the whitelisting?",
 		"description": ""
 	},
 	"whitelistOnlyAPI": {
@@ -1154,6 +1208,19 @@
 		"description": ""
 	},
 	
+	"protectTextMetrics_title": {
+		"message": "Protect TextMetrics API",
+		"description": ""
+	},
+	"protectTextMetrics_description": {
+		"message": "This protects against the \"measureText()\" fingerprinting which can be used to cross validate DOMRect values.",
+		"description": ""
+	},
+	"protectTextMetrics_urlSpecific": {
+		"message": "To exclude specific websites from this protection, click on the black arrow to open the menu, add the domain or URL by clicking on \"+\" and remove its checkmark.",
+		"description": ""
+	},
+	
 	"protectNavigator_title": {
 		"message": "Protect navigator API",
 		"description": ""
@@ -1415,6 +1482,10 @@
 		"message": "Settings",
 		"description": ""
 	},
+	"browserAction_faq": {
+		"message": "FAQ",
+		"description": ""
+	},
 	"browserAction_test": {
 		"message": "Test",
 		"description": ""
@@ -1474,6 +1545,10 @@
 	},
 	"sanitation_error.disabledFeatures": {
 		"message": "All features of {api} are disabled but the protection is enabled.",
+		"description": ""
+	},
+	"sanitation_error.disabledSomeFeatures": {
+		"message": "Some features of {api} are disabled. This should only be done for testing or if you really know what the features are doing.",
 		"description": ""
 	},
 	"sanitation_resolution.disableMainFlag": {
@@ -1551,6 +1626,10 @@
 	
 	"whitelist_inspection_title": {
 		"message": "CanvasBlocker whitelist inspection",
+		"description": ""
+	},
+	"whitelist_inspection_description": {
+		"message": "Shows which API protections are active for a given site. If you remove a checkmark for an API this API will be not protected for the selected site.",
 		"description": ""
 	},
 	"whitelist_all_apis": {

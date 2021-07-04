@@ -16,6 +16,14 @@
 						{
 							"name": "blockMode"
 						},
+						{
+							"name": "disruptSessionOnUpdate"
+						},
+						{
+							"name": "reloadExtension",
+							"actions": ["reloadExtension"],
+							"displayDependencies": [{"updatePending": [true]}]
+						},
 					]
 				},
 				{
@@ -616,6 +624,25 @@
 								"protectDOMRect": [true],
 								"displayAdvancedSettings": [true]
 							}
+						},
+					]
+				},
+				{
+					name: "TextMetrics-API",
+					settings: [
+						{
+							"name": "protectTextMetrics"
+						},
+						{
+							"name": "protectedAPIFeatures",
+							"replaceKeyPattern": / @ .+$/,
+							"displayedSection": "TextMetrics-API",
+							"displayDependencies": [
+								{
+									"protectTextMetrics": [true],
+									"displayAdvancedSettings": [true]
+								}
+							]
 						},
 					]
 				},

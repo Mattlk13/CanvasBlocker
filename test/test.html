@@ -6,6 +6,12 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<link href="testIcon.svg" type="image/png" rel="icon">
 	<link href="testIcon.svg" type="image/png" rel="shortcut icon">
+	<link rel="stylesheet" href="../default.css" type="text/css">
+	<style type="text/css">
+		.hash {
+			font-size: 70%;
+		}
+	</style>
 </head>
 <body>
 <h1>Canvas test</h1>
@@ -13,14 +19,19 @@
 <ul>
 	<li>all the hashes should be equal for each test</li>
 	<li>the hash before and after the "/" do not have to match</li>
-	<li>"isPointInPath" may vary between tests</li>
-	<li>if "refresh" is clicked the hash must not change (but "isPointInPath" may)</li>
+	<li>if "refresh" is clicked the hash must not change</li>
 	<li>upon page reload the hash changes (depending on CanvasBlocker settings - e.g. not in the stealth preset)</li>
 </ul>
 <h2>Tests</h2>
 <div id="top">
 	<h3>top Test</h3>
 	<img class="display"><br>
+	Hash: <span class="hash"></span> (isPointInPath: <span class="isPointInPath"></span>)
+	<button>refresh</button>
+</div>
+<div id="getImageDataTest">
+	<h3>getimageData Test</h3>
+	<canvas class="display"></canvas><br>
 	Hash: <span class="hash"></span> (isPointInPath: <span class="isPointInPath"></span>)
 	<button>refresh</button>
 </div>
@@ -44,7 +55,7 @@
 	<h3>iFrame Test 3 - violating SOP</h3>
 	<img class="display"><br>
 	Hash: <span class="hash"></span> (isPointInPath: <span class="isPointInPath"></span>)
-	<iframe src="http://example.org" style="display:none"></iframe>
+	<iframe src="//example.org" style="display:none"></iframe>
 	<button>refresh</button>
 </div>
 <div id="iframe4">
@@ -69,6 +80,24 @@
 	<h3>window.open Test</h3>
 	<img class="display"><br>
 	Hash: <span class="hash"><i>click anywhere to populate</i></span> (isPointInPath: <span class="isPointInPath"></span>)
+	<button>refresh</button>
+</div>
+<div id="blob">
+	<h3>blob Test</h3>
+	<img class="display"><br>
+	Hash: <span class="hash"></span>
+	<button>refresh</button>
+</div>
+<div id="offscreen">
+	<h3>offscreen Test</h3>
+	<img class="display"><br>
+	Hash: <span class="hash"></span>
+	<button>refresh</button>
+</div>
+<div id="offscreenWorker">
+	<h3>offscreen Worker Test</h3>
+	<img class="display"><br>
+	Hash: <span class="hash"></span>
 	<button>refresh</button>
 </div>
 <script src="testAPI.js"></script>

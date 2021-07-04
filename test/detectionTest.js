@@ -8,21 +8,8 @@ const addTest = (function(){
 		{className: "failed", text: "test failed"}
 	];
 	const ul = document.getElementById("tests");
-	return function addTest(name, func){
-		const logs = [];
-		function log(){
-			logs.push(Array.prototype.slice.call(arguments).join(" "));
-		}
-		let status = 0;
-		try {
-			status = func(log)? 1: 2;
-		}
-		catch (error){
-			console.log(error);
-			status = 3;
-		}
+	return async function addTest(name, func){
 		const li = document.createElement("li");
-		li.className = statusDefinitions[status].className;
 		const nameNode = document.createElement("span");
 		nameNode.className = "name";
 		nameNode.textContent = name;
@@ -31,10 +18,23 @@ const addTest = (function(){
 		li.appendChild(document.createTextNode(": "));
 		const statusNode = document.createElement("span");
 		statusNode.className = "status";
-		statusNode.textContent = statusDefinitions[status].text;
-		statusNode.title = logs.join("\n");
 		li.appendChild(statusNode);
 		ul.appendChild(li);
+		const logs = [];
+		function log(){
+			logs.push(Array.prototype.slice.call(arguments).join(" "));
+		}
+		let status = 0;
+		try {
+			status = await func(log)? 1: 2;
+		}
+		catch (error){
+			console.log(error);
+			status = 3;
+		}
+		li.className = statusDefinitions[status].className;
+		statusNode.textContent = statusDefinitions[status].text;
+		statusNode.title = logs.join("\n");
 		return li;
 	};
 }());
@@ -92,15 +92,33 @@ addTest("function length", function(log){
 		return false;
 	}
 });
-addTest("function code", function(log){
+async function getIframe(){
+	"use strict";
+	return new Promise(function(resolve){
+		const length = window.length;
+		const iframe = document.createElement("iframe");
+		iframe.style.display = "none";
+		iframe.src = "?";
+		document.body.appendChild(iframe);
+		iframe.addEventListener("load", function(){
+			resolve(window[length]);
+		});
+	});
+}
+addTest("function code", async function(log){
 	"use strict";
 	let codeDetected = false;
+	const iframe = await getIframe();
 	function checkFunctionCode(func, expectedName){
 		log("checking", expectedName);
-		if (!func.toString().match(
-			new RegExp("^\\s*function " + expectedName + "\\s*\\(\\)\\s*\\{\\s*\\[native code\\]\\s*\\}\\s*$")
-		)){
+		const reg = new RegExp("^\\s*function " + expectedName + "\\s*\\(\\)\\s*\\{\\s*\\[native code\\]\\s*\\}\\s*$");
+		if (!func.toString().match(reg)){
 			log("unexpected function code:", func.toString());
+			return true;
+		}
+		const iframeString = iframe.Function.prototype.toString.call(func);
+		if (!iframeString.match(reg)){
+			log("unexpected function code (iframe):", iframeString);
 			return true;
 		}
 		return false;

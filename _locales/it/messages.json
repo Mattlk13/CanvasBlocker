@@ -23,6 +23,14 @@
 		"message": "\n  · {api}",
 		"description": ""
 	},
+	"browserAction_status_on": {
+		"message": "CanvasBlocker on",
+		"description": ""
+	},
+	"browserAction_status_off": {
+		"message": "CanvasBlocker off",
+		"description": ""
+	},
 	"more": {
 		"message": "espandi",
 		"description": ""
@@ -147,6 +155,10 @@
 		"message": "API DOMRect",
 		"description": ""
 	},
+	"section_TextMetrics-api": {
+		"message": "API TextMetrics",
+		"description": ""
+	},
 	"section_Navigator-api": {
 		"message": "API Navigatore",
 		"description": ""
@@ -169,6 +181,26 @@
 	},
 	"displayDescriptions_description": {
 		"message": "Mostra le descrizioni delle impostazioni.",
+		"description": ""
+	},
+	"disruptSessionOnUpdate_title": {
+		"message": "Disrupt session on update",
+		"description": ""
+	},
+	"disruptSessionOnUpdate_description": {
+		"message": "If set to true the extension will update as soon as the update is available. This might break some tabs that are currently open.",
+		"description": ""
+	},
+	"reloadExtension_title": {
+		"message": "Reload extension",
+		"description": ""
+	},
+	"reloadExtension_description": {
+		"message": "Perform a pending update.",
+		"description": ""
+	},
+	"reloadExtension_label": {
+		"message": "Reload",
 		"description": ""
 	},
 	"hideSetting": {
@@ -265,6 +297,18 @@
 	},
 	"askForDOMRectReadoutPermission": {
 		"message": "Do you want to allow DOMRect API readout?",
+		"description": ""
+	},
+	"askForTextMetricsPermission": {
+		"message": "Vuoi permettere l'API TextMetrics?",
+		"description": ""
+	},
+	"askForTextMetricsInputPermission": {
+		"message": "Vuoi permettere l'input dell'API TextMetrics?",
+		"description": ""
+	},
+	"askForTextMetricsReadoutPermission": {
+		"message": "Vuoi permettere la lettura dell'API TextMetrics?",
 		"description": ""
 	},
 	"askForNavigatorPermission": {
@@ -648,7 +692,7 @@
 		"description": ""
 	},
 	"blocked": {
-		"message": "API blocked on {url}.",
+		"message": "API bloccate su {url}.",
 		"description": ""
 	},
 	"fakedReadout": {
@@ -671,12 +715,16 @@
 		"message": "Lettura DOMRect falsificata su {url}",
 		"description": ""
 	},
+	"fakedTextMetricsReadout": {
+		"message": "Lettura TextMetrics falsificata su {url}",
+		"description": ""
+	},
 	"fakedNavigatorReadout": {
 		"message": "Lettura navigatore falsificata su {url}",
 		"description": ""
 	},
 	"fakedScreenReadout": {
-		"message": "Faked screen readout on {url}",
+		"message": "Lettura schermo falsificata su {url}",
 		"description": ""
 	},
 	"fakedInput": {
@@ -700,7 +748,7 @@
 		"description": ""
 	},
 	"localFile": {
-		"message": "local file",
+		"message": "file locale",
 		"description": ""
 	},
 	"ignorelistDomain": {
@@ -761,6 +809,10 @@
 	},
 	"selectWhitelistScope": {
 		"message": "What is the scope of the whitelisting?",
+		"description": ""
+	},
+	"selectWhitelistType": {
+		"message": "What is the type of the whitelisting?",
 		"description": ""
 	},
 	"whitelistOnlyAPI": {
@@ -956,7 +1008,7 @@
 		"description": ""
 	},
 	"audioFakeRate_description": {
-		"message": "How many of the values per read request shall be faked.",
+		"message": "Quanti dei valori per richiesta di lettura devono essere falsificati.",
 		"description": ""
 	},
 	"audioFakeRate_options.1": {
@@ -1036,7 +1088,7 @@
 		"description": ""
 	},
 	"audioUseFixedIndices_description": {
-		"message": "If some of the used indices shall always be faked.",
+		"message": "Se alcuni degli indici utilizzati devono sempre essere falsificati.",
 		"description": ""
 	},
 	"audioFixedIndices_title": {
@@ -1044,7 +1096,7 @@
 		"description": ""
 	},
 	"audioFixedIndices_description": {
-		"message": "The indices that are always faked. To add multiple entries, separate them by commas.",
+		"message": "Gli indici che vengono sempre falsificati. Per aggiungere più voci, separale da virgole.",
 		"description": ""
 	},
 	"historyLengthThreshold_title": {
@@ -1107,6 +1159,18 @@
 		"message": "Some fraction of a pixel can be controlled by CSS. To prevent detection, values of a DOMRect that multiplied with this factor are integers will not be altered.",
 		"description": ""
 	},
+	"protectTextMetrics_title": {
+		"message": "Proteggi API TextMetrics",
+		"description": ""
+	},
+	"protectTextMetrics_description": {
+		"message": "Protegge contro le impronte digitali \"measureText()\" che possono essere utilizzate per incrociare i valori DOMRect.",
+		"description": ""
+	},
+	"protectTextMetrics_urlSpecific": {
+		"message": "Per escludere siti specifici da questa protezione, clicca la freccia nera per aprire il menu, aggiungi il dominio o URL cliccando \"+\" e rimouvi la sua spunta.",
+		"description": ""
+	},
 	"protectNavigator_title": {
 		"message": "Protect API navigatore",
 		"description": ""
@@ -1140,7 +1204,7 @@
 		"description": ""
 	},
 	"navigatorSettings_disclaimer": {
-		"message": "CAUTION: the actual browser in use cannot be faked entirely as there is a multitude of ways to detect it. E.g. feature tests and browser specific rendering of HTML elements will always leak.",
+		"message": "ATTENZIONE: il browser attualmente in uso non può essere completamente falsificato in quanto ci sono molti modi per rilevarlo. Ad esempio, i test di funzionalità e il rendering specifico del browser degli elementi HTML saranno sempre rilevabili.",
 		"description": ""
 	},
 	"navigatorSettings_contextualIdentities": {
@@ -1355,6 +1419,10 @@
 		"message": "Impostazioni",
 		"description": ""
 	},
+	"browserAction_faq": {
+		"message": "Domande frequenti",
+		"description": ""
+	},
 	"browserAction_test": {
 		"message": "Test",
 		"description": ""
@@ -1413,6 +1481,10 @@
 	},
 	"sanitation_error.disabledFeatures": {
 		"message": "All features of {api} are disabled but the protection is enabled.",
+		"description": ""
+	},
+	"sanitation_error.disabledSomeFeatures": {
+		"message": "Some features of {api} are disabled. This should only be done for testing or if you really know what the features are doing.",
 		"description": ""
 	},
 	"sanitation_resolution.disableMainFlag": {
@@ -1489,6 +1561,10 @@
 	},
 	"whitelist_inspection_title": {
 		"message": "Ispezione lista bianca di CanvasBlocker",
+		"description": ""
+	},
+	"whitelist_inspection_description": {
+		"message": "Shows which API protections are active for a given site. If you remove a checkmark for an API this API will be not protected for the selected site.",
 		"description": ""
 	},
 	"whitelist_all_apis": {
